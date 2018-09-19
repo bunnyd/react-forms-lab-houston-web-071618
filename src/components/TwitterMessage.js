@@ -1,4 +1,5 @@
 import React from "react";
+import App from "../App";
 
 class TwitterMessage extends React.Component {
   constructor() {
@@ -11,7 +12,11 @@ class TwitterMessage extends React.Component {
     return (
       <div>
         <strong>Your message:</strong>
-        <input type="text" />
+        <input
+          type="text"
+          onChange={event => this.setState({ message: event.target.value })}
+          value={this.state.message}
+        />
       </div>
     );
   }
